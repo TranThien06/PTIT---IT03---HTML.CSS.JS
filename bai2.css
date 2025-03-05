@@ -1,0 +1,35 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    padding: 20px;
+    width: 70%;
+    height: 60%;
+    display: flex;
+    text-align: center;
+    
+   
+}
+.container{
+            max-width: 500px;
+            
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            
+            margin: auto;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            position: relative;
+}
+.container h2{
+    color: #BD262C;
+    font-size: 20px;
+    text-align: center;
+
+}
+.container p{
+    color: #473C6E;
+    font-size: 16px;
+    text-align: center;
+}
