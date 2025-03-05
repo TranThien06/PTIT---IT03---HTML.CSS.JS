@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+   
+}
+.container {
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    margin: 2px;
+    
+}
+.editor-pick {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.editor-pick img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+.image img {
+    width: 100%;
+    margin-top: 10px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+
+}
+.category {
+    color: #1a0e60;
+    font-weight: bold;
+    margin-top: 18px;
+   
+}
+.description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 18px;
+    
+}
