@@ -25,17 +25,19 @@ body {
 .image-container img {
     width: 100%;
     border-radius: 5px;
+    
 }
 .headline {
+    
     position: absolute;
     bottom: 5px;
-    left: 5px;
-    right: 5px;
+    left: 0px;
+    right: 0px;
     background: rgba(0, 0, 0, 0.6);
     color: white;
     padding: 60px;
-    
-    
+    box-shadow: 1;
+   
     font-size: 25px;
     font-weight: bold;
 }

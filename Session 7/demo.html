@@ -1,75 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beauty & Fashion</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 15px;
-        }
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-left: 5px solid orange;
-            padding-left: 10px;
-            margin-bottom: 10px;
-        }
-        .image-container {
-            position: relative;
-        }
-        .image-container img {
-            width: 100%;
-            border-radius: 5px;
-        }
-        .headline {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .related-articles {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-        .related-articles div {
-            padding: 8px 0;
-            border-bottom: 1px solid #ddd;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Beauty & Fashion</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+    .main-container {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    /* Phần tiêu đề với vạch đứng màu cam */
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .header .line {
+      width: 4px;
+      height: 24px;
+      background-color: #f05a28;
+      margin-right: 8px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #333;
+    }
+    /* Phần ảnh và chữ đè lên ảnh (overlay) */
+    .image-container {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    }
+    .overlay-text {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      max-width: 80%;
+    }
+    .overlay-text h2 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    /* Phần nội dung phía dưới */
+    .content p {
+      margin: 8px 0;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
+  <div class="main-container">
+    <!-- Phần tiêu đề -->
+    <div class="header">
+      <div class="line"></div>
+      <h1>Beauty &amp; Fashion</h1>
+    </div>
 
-<div class="container">
-    <div class="section-title">Beauty & Fashion</div>
-
+    <!-- Phần ảnh và overlay -->
     <div class="image-container">
-        <img src="https://nguoiduatin.mediacdn.vn/upload/1-2025/images/2025-02-11/H-img_3309-1739263621-781-width1536height2048.jpeg" alt="H'Hen Niê Proposal">
-        <div class="headline">Nhìn ảnh cầu hôn của H'Hen Niê mới phát hiện phong thủy không đùa được đâu!</div>
+      <!-- Thay link ảnh bằng ảnh của bạn -->
+      <img src="https://nguoiduatin.mediacdn.vn/upload/1-2025/images/2025-02-11/H-img_3309-1739263621-781-width1536height2048.jpeg" alt="Hình minh hoạ">
+      <div class="overlay-text">
+        <h2>Nhìn ảnh cầu hôn của H'Hen Niê mới phát hiện phong thủy không đùa được đâu!</h2>
+      </div>
     </div>
 
-    <div class="related-articles">
-        <div><strong>Netizen lo lắng:</strong> Hương Giang liệu có nặng nổi 35kg?</div>
-        <div><strong>Giờ mới biết tiêu chuẩn của Thiều Bảo Trâm, dân tình vào bình luận gấp</strong></div>
+    <!-- Phần nội dung bài viết -->
+    <div class="content">
+      <p>Netizen lo lắng: Hương Giang liệu có nặng nổi 35kg?</p>
+      <p>Giờ mới biết tiêu chuẩn của Thiều Bảo Trâm, dân tình vào bình luận gấp</p>
     </div>
-</div>
-
+  </div>
 </body>
 </html>
