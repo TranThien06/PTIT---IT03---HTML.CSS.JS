@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7b988689d5.js" crossorigin="anonymous"></script>
+
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ef110a;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.icon-box {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ddd;
+    transform: rotate(45deg);
+    margin-right: 15px;
+    margin: 20px;
+}
+
+.icon-box i {
+    font-size: 30px;
+    color: #eb0d06;
+    transform: rotate(-45deg);
+}
+
+.text {
+    flex: 1;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    color: #555;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="section-title">Erat lacinia</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-gem"></i></div>
+                <div class="text">
+            <h3>Porttitor ullamcorper</h3>
+                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-paper-plane"></i></div>
+                <div class="text">
+                <h3>Sapien vereros</h3>
+                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-rocket"></i></div>
+            <div class="text">
+                    <h3>Quam lorem ipsum</h3>
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum.</p>
+            </div>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-signal"></i></div>
+                <div class="text">
+            <h3>Sed magna finibus</h3>
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum.</p>
+            </div>
+    </div>
+        </div>
+    </div>
+</body>
+</html>
