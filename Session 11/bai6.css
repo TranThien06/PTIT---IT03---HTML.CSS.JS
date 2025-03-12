@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E6E5E5;
+    padding: 20px;
+}
+.Ex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    background: white;
+    width: 100%;
+    gap: 10px;
+}
+
+.Ex_html {
+    opacity: 0.5;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    flex-grow: 1;
+    
+}
+.container {
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    font-size: 30px;
+    border: 2px solid black;
+}
+.box {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.blue{
+    background-color: #5995DB;
+    height: 30px;
+}
+.box-header{
+    background-color: #B2D6FF;
+    height: 100px;
+}
+.box-content{
+    background-color: #EBEDF0;
+    height: 200px;
+}
+.box-signup{
+    background-color: #D7E9FE;
+    height: 100px;
+}
+.box-feature1{
+    background-color: #ffa200;
+    height: 100px;
+}
+.box-feature2{
+    background-color: #ff0008;
+    height: 100px;
+}
+.box-feature3{
+    background-color: #0d05f5;
+    height: 100px;
+}
+@media (max-width: 767px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .Ex { width: 100%; }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .Ex {grid-column:  span 2;}
+    .blue {grid-column: span 2;}
+    .box-header { grid-column: span 2; }
+    .box-content { grid-column: span 2; }
+    
+    .box-signup,
+    .box-feature1,
+    .box-feature2, 
+    .box-feature3 { grid-column: span 1; }
+
+    .Ex { width: 100%; }
+}
+
+@media (min-width: 1201px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+        "EX EX EX"
+        "blue1 blue1 blue1" 
+        "header header header"
+        "feature1 feature2 feature3"
+        "signup signup signup"
+        "content content content";
+    }
+    .Ex {grid-area: EX;}
+    .blue   { grid-area: blue1; }
+    .box-header { grid-area: header; }
+    .box-feature1 { grid-area: feature1; }
+    .box-feature2 { grid-area: feature2; }
+    .box-feature3 { grid-area: feature3; }
+    .box-signup { grid-area: signup; }
+    .box-content { grid-area: content; }
+
+    
+}
