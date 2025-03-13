@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7b988689d5.js" crossorigin="anonymous"></script>
+    <style>
+        
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            color: white;
+            
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       
+        .card-body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 80%;
+        }
+       
+        .avatar {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid white;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .info {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+<div class="container mt-4">
+    <h2>Rikkei cards</h2>
+    <div class="row">
+       
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.BgnHKzOyVSMAEmivrFjTPAHaF7&pid=Api&P=0&h=180" alt="Moon Image">
+                <div class="avatar">
+                    <img src="https://logospng.org/download/bootstrap/bootstrap-1024.png"  alt="Avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fs-1 text-center">Short title, long jacket</h5>
+                </div>
+                <div class="info">
+                    <span><i class="fa-sharp fa-solid fa-map-pin"></i> Earth</span> &nbsp; <i class="fa-regular fa-calendar-days"></i> 3d
+                </div>
+            </div>
+        </div>
+        
+      
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.ssnBP5cDeQIBf8q-p4VNMgHaF7&pid=Api&P=0&h=180" alt="Flower Image">
+                <div class="avatar">
+                    <img src="https://logospng.org/download/bootstrap/bootstrap-1024.png" alt="Avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fs-1 text-center">Much longer title that wraps to multiple lines</h5>
+                </div>
+                <div class="info">
+                    <span><i class="fa-sharp fa-solid fa-map-pin"></i> Earth</span> &nbsp; <i class="fa-regular fa-calendar-days"></i> 3d
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.BgnHKzOyVSMAEmivrFjTPAHaF7&pid=Api&P=0&h=180" alt="Jellyfish Image">
+                <div class="avatar">
+                    <img src="https://logospng.org/download/bootstrap/bootstrap-1024.png" alt="Avatar">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title fs-1 text-center">Another longer title belongs here</h5>
+                </div>
+                <div class="info">
+                    <span><i class="fa-sharp fa-solid fa-map-pin"></i> Earth</span> &nbsp; <i class="fa-regular fa-calendar-days"></i> 3d
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
