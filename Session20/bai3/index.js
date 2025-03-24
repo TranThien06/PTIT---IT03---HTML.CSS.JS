@@ -1,8 +1,14 @@
 // Nhập vào chuỗi số nguyên
 let input = prompt("Nhập vào một chuỗi số nguyên:");
-let reversedInput = input.split('').reverse().join('');
-if (input === reversedInput) {
-   alert(`${input} là số đối xứng.`);
+let isPalindrome = true;
+for (let i = 0; i < input.length / 2; i++) {
+    if (input[i] !== input[input.length - 1 - i]) {
+        isPalindrome = false;
+        break;
+    }
+}
+if (isPalindrome) {
+    alert(`${input} là số đối xứng.`);
 } else {
     alert(`${input} không phải là số đối xứng.`);
 }
