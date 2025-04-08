@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .login-box {
+            border: 1px solid #000;
+            width: 300px;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        input {
+            width: 100%;
+            padding: 6px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+  
+    <ul>
+        <li>username: huanrose@gmail.com</li>
+        <li>password: 123456</li>
+    </ul>
+
+    <div class="login-box">
+        <label for="username">username:</label>
+        <input type="text" id="username" />
+
+        <label for="password">password:</label>
+        <input type="password" id="password" />
+
+        <button onclick="handleLogin()">login</button>
+        <script src="./index.js"></script>
+    </div>
+</body>
+
+</html>
