@@ -2,129 +2,133 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List K24</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .input-area {
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin: 0;
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-            border-radius: 8px;
-            width: 400px;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .input-section {
-            display: flex;
-            justify-content: space-between;
+            gap: 10px;
             margin-bottom: 20px;
         }
 
-        input {
-            flex: 1;
-            padding: 8px;
-            margin-right: 10px;
+        #nhapCongViec {
+            padding: 5px;
+            width: 200px;
+            font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 3px;
         }
 
-        button {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
+        #nutThem {
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
             cursor: pointer;
-            font-size: 16px;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
+        .task-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #eee;
+            padding: 5px 10px;
+            margin: 5px 0;
             background-color: #f9f9f9;
-            margin-bottom: 5px;
-            border-radius: 4px;
+            border-radius: 3px;
         }
 
-        li button:hover {
-            opacity: 0.8;
+        .edit-btn,
+        .delete-btn {
+            padding: 2px 8px;
+            margin-left: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+        }
+
+        #danhSachCongViec {
+            text-align: left;
+            padding: 10px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>To-Do List K24</h1>
-        <div class="input-section">
-            <input type="text" id="taskInput" placeholder="Nhập công việc" />
-            <button onclick="addTask()">Thêm</button>
+        <h2>To-Do List K24</h2>
+        <div class="input-area">
+            <input type="text" id="nhapCongViec" placeholder="Nhập công việc...">
+            <button id="nutThem">Thêm</button>
         </div>
-        <ul id="taskList"></ul>
+        <div id="danhSachCongViec"></div>
     </div>
-    <script src="bai8.js"></script>
-</body>
-<script>
-    // Hàm thêm công việc
-        function addTask() {
-            const taskInput = document.getElementById("taskInput");
-            const taskText = taskInput.value.trim();
 
-            if (taskText === "") {
-                alert("Vui lòng nhập công việc!");
-                return;
-            }
+    <script>
+        const nhapCongViec = document.getElementById("nhapCongViec");
+        const nutThem = document.getElementById("nutThem");
+        const danhSachCongViec = document.getElementById("danhSachCongViec");
 
-            const taskList = document.getElementById("taskList");
-            const li = document.createElement("li");
-
-            li.innerHTML = `
-        ${taskText}
-        <div>
-            <button onclick="editTask(this)">Sửa</button>
-            <button onclick="deleteTask(this)">Xóa</button>
-        </div>
-    `;
-
-            taskList.appendChild(li);
-            taskInput.value = "";
-        }
-
-        function deleteTask(button) {
-            button.parentElement.parentElement.remove();
-        }
-
-        function editTask(button) {
-            const li = button.parentElement.parentElement;
-            const taskText = li.firstChild.textContent.trim();
-            const newTaskText = prompt("Sửa công việc:", taskText);
-
-            if (newTaskText !== null && newTaskText.trim() !== "") {
-                li.firstChild.textContent = newTaskText;
+        function themCongViec() {
+            const congViec = nhapCongViec.value.trim();
+            if (congViec !== "") {
+                const taskItem = document.createElement("div");
+                taskItem.className = "task-item";
+                taskItem.innerHTML = `
+                    <span>${congViec}</span>
+                    <div>
+                        <button class="edit-btn" onclick="suaCongViec(this)">Sửa</button>
+                        <button class="delete-btn" onclick="xoaCongViec(this)">Xóa</button>
+                    </div>
+                `;
+                danhSachCongViec.appendChild(taskItem);
+                nhapCongViec.value = "";
             }
         }
-        document.getElementById("taskInput").addEventListener("keypress", function (e) {
-            if (e.key === "Enter") {
-                addTask();
+
+        function suaCongViec(button) {
+            alert("Bạn đang thực hiện chỉnh sửa công việc.");
+            const congViecHienTai = button.parentElement.parentElement.querySelector("span").textContent;
+            const noiDungMoi = prompt("Chỉnh sửa công việc:", congViecHienTai);
+            if (noiDungMoi !== null && noiDungMoi.trim() !== "") {
+                button.parentElement.parentElement.querySelector("span").textContent = noiDungMoi.trim();
+            }
+        }
+
+        function xoaCongViec(button) {
+            alert("Bạn đang chuẩn bị xóa công việc.");
+            if (confirm("Bạn có chắc muốn xóa công việc này?")) {
+                button.parentElement.parentElement.remove();
+            }
+        }
+
+        nutThem.addEventListener("click", themCongViec);
+
+        nhapCongViec.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                themCongViec();
             }
         });
-</script>
+    </script>
+</body>
+
 </html>

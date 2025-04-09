@@ -1,26 +1,42 @@
-//lấy các phần tử từ DOM
 const nhapCongViec = document.getElementById("nhapCongViec");
 const nutThem = document.getElementById("nutThem");
 const danhSachCongViec = document.getElementById("danhSachCongViec");
 
-//hàm thêm công việc
 function themCongViec() {
     const congViec = nhapCongViec.value.trim();
     if (congViec !== "") {
-        //tạo phần tử mới cho công việc
-        const phanTuCongViec = document.createElement("div");
-        phanTuCongViec.textContent = congViec;
-        danhSachCongViec.appendChild(phanTuCongViec);
-
-        //xóa nội dung ô input
+        const taskItem = document.createElement("div");
+        taskItem.className = "task-item";
+        taskItem.innerHTML = `
+                    <span>${congViec}</span>
+                    <div>
+                        <button class="edit-btn" onclick="suaCongViec(this)">Sửa</button>
+                        <button class="delete-btn" onclick="xoaCongViec(this)">Xóa</button>
+                    </div>
+                `;
+        danhSachCongViec.appendChild(taskItem);
         nhapCongViec.value = "";
     }
 }
 
-//gán sự kiện cho nút Thêm
+function suaCongViec(button) {
+    
+    const congViecHienTai = button.parentElement.parentElement.querySelector("span").textContent;
+    const noiDungMoi = prompt("Chỉnh sửa công việc:", congViecHienTai);
+    if (noiDungMoi !== null && noiDungMoi.trim() !== "") {
+        button.parentElement.parentElement.querySelector("span").textContent = noiDungMoi.trim();
+    }
+}
+
+function xoaCongViec(button) {
+   
+    if (confirm("Bạn có chắc muốn xóa công việc này?")) {
+        button.parentElement.parentElement.remove();
+    }
+}
+
 nutThem.addEventListener("click", themCongViec);
 
-//cho phép thêm công việc bằng phím Enter
 nhapCongViec.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         themCongViec();
