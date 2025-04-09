@@ -1,0 +1,78 @@
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    /* Căn giữa */
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Ô input và nút Thêm */
+.input-area {
+    display: flex;
+    /* Sắp xếp input và nút ngang hàng */
+    margin-bottom: 10px;
+}
+
+#oNhapNhiemVu {
+    flex: 1;
+    
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+  
+}
+
+#nutThem {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    /* m-àu xanh */
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    /* bo góc phải */
+    cursor: pointer;
+    /* con trỏ tay khi hover */
+}
+
+#nutThem:hover {
+    background-color: #45a049;
+    /* Màu xanh đậm hơn khi hover */
+}
+
+/* Danh sách nhiệm vụ */
+.nhiemVu {
+    display: flex;
+    /* sắp xếp nhiệm vụ và nút X ngang hàng */
+    justify-content: space-between;
+    /* acách đều hai bên */
+    padding: 5px;
+    margin: 5px 0;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.nutXoa {
+    background-color: #f44336;
+    /*màu đỏ */
+    color: white;
+    border: none;
+    padding: 2px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nutXoa:hover {
+    background-color: #d32f2f;
+    /*màu đỏ đậm hơn khi hover */
+}

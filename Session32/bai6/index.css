@@ -1,0 +1,49 @@
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#vanBan {
+    font-size: 16px;
+    /* Kích thước chữ mặc định */
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#nutTang {
+    background-color: #4CAF50;
+    /* Màu xanh */
+    color: white;
+}
+
+#nutTang:hover {
+    background-color: #45a049;
+}
+
+#nutGiam {
+    background-color: #f44336;
+    /* Màu đỏ */
+    color: white;
+}
+
+#nutGiam:hover {
+    background-color: #d32f2f;
+} 

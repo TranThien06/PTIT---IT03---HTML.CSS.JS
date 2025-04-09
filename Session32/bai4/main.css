@@ -1,0 +1,27 @@
+.container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.email-input {
+    padding: 5px;
+    width: 200px;
+}
+
+.check-btn {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}
