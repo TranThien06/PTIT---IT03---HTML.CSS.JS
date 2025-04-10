@@ -1,0 +1,33 @@
+ .container {
+     margin: 20px;
+     background-color: #e3f2fd;
+     padding: 20px;
+     border-radius: 10px;
+     text-align: center;
+ }
+
+ .weather-card {
+     margin-top: 20px;
+     padding: 20px;
+     background-color: #fff;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     display: none;
+     max-width: 300px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .weather-card.show {
+     display: block;
+ }
+
+ .error {
+     color: red;
+     margin-top: 20px;
+     display: none;
+ }
+
+ .error.show {
+     display: block;
+ }

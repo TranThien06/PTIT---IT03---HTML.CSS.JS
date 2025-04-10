@@ -1,0 +1,24 @@
+ .password-container {
+     position: relative;
+     margin: 20px 0;
+     width: 300px;
+ }
+
+ .password-container input {
+     width: 100%;
+     padding: 10px;
+     padding-right: 40px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+ }
+
+ .toggle-password {
+     position: absolute;
+     right: 10px;
+     top: 60%;
+     /* Tụt xuống một chút cho đẹp */
+     transform: translateY(-50%);
+     cursor: pointer;
+     font-size: 18px;
+ }

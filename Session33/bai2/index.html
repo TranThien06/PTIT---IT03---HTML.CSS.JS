@@ -1,0 +1,25 @@
+<!-- Bài 2: Viết chương trình javascript thực hiện kiểm tra đếm số ký tự trong ô input như sau: -->
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Viết chương trình javascript thực hiện kiểm tra đếm số ký tự trong ô input như sau:</p>
+    <textarea id="textInput" rows="5" cols="40"></textarea>
+    <p id="result">0 ký tự</p>
+    <button onclick="demKyTu()">Kiểm tra</button>
+
+    <script>
+        function demKyTu() {
+            const text = document.getElementById("textInput").value;
+            const soKyTu = text.length;
+            document.getElementById("result").innerText = soKyTu + " ký tự";
+        }
+    </script>
+</body>
+
+</html>
