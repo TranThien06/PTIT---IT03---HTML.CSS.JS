@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Task Management</h2>
+        <div class="form-group">
+            <input type="text" id="content" placeholder="Content">
+            <input type="date" id="dueDate" placeholder="mm/dd/yyyy">
+            <select id="status">
+                <option value="" disabled selected>Choose status</option>
+                <option value="PENDING">PENDING</option>
+                <option value="COMPLETED">COMPLETED</option>
+            </select>
+            <input type="text" id="assignedTo" placeholder="Username">
+            <button onclick="">Submit</button>
+        </div>
+        <table id="taskTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Content</th>
+                    <th>Due date</th>
+                    <th>Status</th>
+                    <th>Assigned to</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="taskBody"></tbody>
+        </table>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Task Management</h2>
+        <div class="form-group">
+            <input type="text" id="content" placeholder="Content">
+            <input type="date" id="dueDate" placeholder="mm/dd/yyyy">
+            <select id="status">
+                <option value="" disabled selected>Choose status</option>
+                <option value="PENDING">PENDING</option>
+                <option value="COMPLETED">COMPLETED</option>
+            </select>
+            <input type="text" id="assignedTo" placeholder="Username">
+            <button onclick="">Submit</button>
+        </div>
+        <table id="taskTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Content</th>
+                    <th>Due date</th>
+                    <th>Status</th>
+                    <th>Assigned to</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="taskBody"></tbody>
+        </table>
+    </div>
+    <script>
+        //khởi tạo mảng tasks từ Local Storage hoặc mảng rỗng nếu chưa có
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+            //hàm để lưu dữ liệu vào Local Storage
+            function saveToLocalStorage() {
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+            }
+
+            //hàm để hiển thị danh sách công việc
+            function renderTasks() {
+                const taskBody = document.getElementById('taskBody');
+                taskBody.innerHTML = ''; // Xóa nội dung cũ
+                tasks.forEach((task, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${task.content}</td>
+            <td>${task.dueDate}</td>
+            <td>${task.status}</td>
+            <td>${task.assignedTo}</td>
+            <td>
+                <button class="action-btn edit-btn" onclick="editTask(${index})">Sửa</button>
+                <button class="action-btn delete-btn" onclick="deleteTask(${index})">Xóa</button>
+            </td>
+        `;
+                    taskBody.appendChild(row);
+                });
+            }
+
+            //hàm thêm công việc mới
+            function addTask() {
+                const content = document.getElementById('content').value;
+                const dueDate = document.getElementById('dueDate').value;
+                const status = document.getElementById('status').value;
+                const assignedTo = document.getElementById('assignedTo').value;
+
+                if (content && dueDate && status && assignedTo) {
+                    const newTask = {
+                        id: tasks.length + 1,
+                        content,
+                        dueDate,
+                        status,
+                        assignedTo
+                    };
+                    tasks.push(newTask);
+                    saveToLocalStorage();
+                    renderTasks();
+                    //reset form
+                    document.getElementById('content').value = '';
+                    document.getElementById('dueDate').value = '';
+                    document.getElementById('status').value = '';
+                    document.getElementById('assignedTo').value = '';
+                } else {
+                    alert('Please fill in all fields!');
+                }
+            }
+
+            //hàm xóa công việc
+            function deleteTask(index) {
+                tasks.splice(index, 1);
+                saveToLocalStorage();
+                renderTasks();
+            }
+
+            //hàm chỉnh sửa công việc
+            function editTask(index) {
+                const task = tasks[index];
+                const newContent = prompt('Edit content:', task.content);
+                const newDueDate = prompt('Edit due date (YYYY-MM-DD):', task.dueDate);
+                const newStatus = prompt('Edit status (PENDING/COMPLETED):', task.status);
+                const newAssignedTo = prompt('Edit assigned to:', task.assignedTo);
+
+                if (newContent && newDueDate && newStatus && newAssignedTo) {
+                    tasks[index] = {
+                        id: task.id,
+                        content: newContent,
+                        dueDate: newDueDate,
+                        status: newStatus,
+                        assignedTo: newAssignedTo
+                    };
+                    saveToLocalStorage();
+                    renderTasks();
+                }
+            }
+
+            //hiển thị danh sách công việc khi tải trang
+            renderTasks();
+    </script>
+</body>
+
+</html>
